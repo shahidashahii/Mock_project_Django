@@ -1,0 +1,21 @@
+{% extends 'dummy.html' %}
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+        <center>
+            <form method="POST">
+                {% csrf_token %}
+
+                {{QFO.as_p}}
+                
+                <br><br>
+
+                <input type="submit" value="Submit">
+
+            </form>
+        </center>
+
+{% endblock %}
+

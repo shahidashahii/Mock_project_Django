@@ -1,0 +1,22 @@
+{% extends 'dummy.html' %}
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+        <center>
+            {% if user.is_authenticated %}
+            <h1>Welcome to Home page MS{{username}} </h1>
+            {% for question in questions %}
+                <a href="{% url 'insertanswer' question.pk %}"><h4>{{question}}</h4></a>
+            {% endfor %}
+            {% else %}
+            <h1> welcome to home page </h1>
+            {% for question in questions %}
+                <a href="{% url 'insertanswer' question.pk %}"><h4>{{question}}</h4></a>
+            {% endfor %}
+            {% endif %}
+            
+        </center>
+
+{% endblock %}
